@@ -18,14 +18,8 @@ def valid_password(entry) -> bool:
 def valid_password_v2(entry) -> bool:
     password = entry['password']
     expected_char = entry['needed_character']
-    try:
-        first_char = password[entry['min_times'] - 1]
-    except:
-        first_char = None
-    try:
-        second_char = password[entry['max_times'] - 1]
-    except:
-        second_char = None
+    first_char = password[entry['min_times'] - 1]
+    second_char = password[entry['max_times'] - 1]
     if first_char == expected_char:
         return second_char != expected_char
     else:
